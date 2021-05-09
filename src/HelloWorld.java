@@ -47,6 +47,7 @@ public class HelloWorld {
         多行注释，块注释
         System.out.println("test");
         System.out.println();*/
+
         max(arr);
 
     }
