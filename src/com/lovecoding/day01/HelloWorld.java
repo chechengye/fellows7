@@ -1,3 +1,5 @@
+package com.lovecoding.day01;
+
 /**
  * IDEA快捷键
  * psvm : 主函数
