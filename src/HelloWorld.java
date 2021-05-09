@@ -26,7 +26,7 @@
  * 注释语法：
  * Java分为三种注释方式 （
  * 1、文档注释 /** 注释中不能包含同样格式的注释，否则会失效 （标记一个方法、一个类解释、谁编写的 、编写的日期）
- * 2、多行注释 /*
+ * 2、多行注释、块注释 /*  （注释掉一段代码块）
  * 3、单行注释 // 标记、解释一行代码的 （干嘛用的、谁写的）
  * ）
  *
@@ -43,6 +43,10 @@ public class HelloWorld {
         System.out.println("hello , world");//功能执行语句
         //System.out.println(); 用不上了，不再使用了
         int[] arr = new int[5];
+        /*
+        多行注释，块注释
+        System.out.println("test");
+        System.out.println();*/
         max(arr);
 
     }
