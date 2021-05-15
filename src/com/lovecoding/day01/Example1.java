@@ -55,6 +55,7 @@ public class Example1 {
     float f1 = 0.0F;
     double d1 = 0.0D;
 
+
     //变量的命名格式
     short s1 = 5;
     short s2;
