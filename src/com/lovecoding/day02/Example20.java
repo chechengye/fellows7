@@ -26,8 +26,12 @@ public class Example20 {
             System.out.println(j);
         }*/
         //4、表达式3省略，但是要声明在循环内部
-        for(int j = 1 ; j < 5 ; ){
-            System.out.println(j++);
+        System.out.println("==============================");
+        for(int j = 1 ; j < 5 ; j ++){
+
+            if(j == 3)
+                continue; //跳过本次循环、并不是跳出循环
+            System.out.println(j);
         }
         //5、表达式1,3省略，但是要声明在循环的外部和内部
         //6、三个表达式都省略,死循环
@@ -36,5 +40,7 @@ public class Example20 {
             if(k++ == 3) break;//关键词，跳出循环体 。if条件语句若只有一行功能性代码块{}可以省略不写
             System.out.println("---------------");
         }
+
+
     }
 }
