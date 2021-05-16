@@ -12,7 +12,7 @@ public class Example12 {
     final static int BOUND = 16;
     public static void main(String[] args) {
         System.out.println("欢迎来到，双色球游戏~~");
-        System.out.println("-----------奖池---------");
+        System.out.println("-----------球池---------");
         String[] ballPool = getBallPool();//双色球奖池
         System.out.println(Arrays.toString(ballPool));
         String[] userRedBall = new String[6];//用户红球
