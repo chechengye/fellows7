@@ -7,3 +7,7 @@ Example2  - 方法的简单应用 2、根据传入的参数数量打印直角三
 Example3  - 方法的重载 overloading method
 
 Example4  - 数组的应用    1、JDK 1.5之后增加了增强foreach循环应用
+
+Example5  - 1、猜数游戏：从键盘中任意输入一个数据，判断数列中是否包含此数
+
+Example6  - 2、打印正三角形。

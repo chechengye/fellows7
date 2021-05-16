@@ -20,9 +20,16 @@ import org.junit.Test;
  * 增强foreach与fori区别
  * fori ： 可以拿到索引的位置 ，方便操作数组（换位、替换值、删除等）
  * foreach ： 语法简单 、 显示/读取的时候使用
+ *
+ * 数组可能出现的异常
+ * 1、数组下标越界 java.lang.ArrayIndexOutOfBoundsException: 3
+ * 2、空指针异常  java.lang.NullPointerException
+ *
+ * 异常会中断程序继续执行 （除非进行异常捕获处理）
  */
 public class Example4 {
 
+    int a = 100;
     public static void main(String[] args) {
         //定义50名学生学号的空间
         //(1)种动态初始化
@@ -37,8 +44,10 @@ public class Example4 {
         System.out.println("-----------------------------");
         //(2)静态初始化
         int[] snoArr1 = {2021001 , 2021002 , 2021003};
+        snoArr1 = null;//某种特定情况下进行了赋值操作，将其置为null
+        System.out.println(snoArr1.length);
 
-        System.out.println(snoArr1[snoArr1.length - 1]);//错误的。索引从0开始。最后一个索引位置是长度 - 1
+        System.out.println(snoArr1[snoArr1.length]);//错误的。索引从0开始。最后一个索引位置是长度 - 1
         System.out.println("---------测试增强for循环---------");
         testForEach(snoArr);
         System.out.println();
@@ -72,6 +81,19 @@ public class Example4 {
             System.out.println(x);
         }
         //System.out.println(arr);
+    }
+
+    /**
+     * 内存分析简单测试
+     */
+    @Test
+    public void testFn(){
+        int[] arr = new int[5];
+        arr[0]  = 1;
+        arr[1] = 2;
+        for (int x : arr){
+            System.out.print(x + " ");
+        }
     }
 
 }
