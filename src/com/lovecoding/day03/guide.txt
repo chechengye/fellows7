@@ -1,0 +1,9 @@
+******************************8
+
+Example1  - 讲解方法
+
+Example2  - 方法的简单应用 2、根据传入的参数数量打印直角三角形
+
+Example3  - 方法的重载 overloading method
+
+Example4  - 数组的应用    1、JDK 1.5之后增加了增强foreach循环应用
