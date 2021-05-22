@@ -19,3 +19,5 @@ Example8  - 代码块
 Example9  - 单例设计模式
 
 Example10 - 鸡舍管理案例
+
+Example11 - 继承的应用

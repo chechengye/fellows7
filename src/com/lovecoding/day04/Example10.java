@@ -16,8 +16,15 @@ public class Example10 {
         cm.addChicken(new Chicken("辣子鸡2" ,4 , 5 ));
         cm.addChicken(new Chicken("辣子鸡3" ,4 , 6 ));*/
         System.out.println("--------------------------");
-        cm.updateChicken(new Chicken("老母鸡" , 10 , 3));
+        cm.updateChicken(new Chicken("老母鸡1111" , 10 , 3));
         cm.printAll();
+        System.out.println("---------------------------");
+        Chicken chicken = cm.findChickenById(5);
+        System.out.println(chicken);
+        System.out.println("-----------------------------");
+        cm.deleteChickenById(1);
+        cm.printAll();
+
     }
 }
 
@@ -39,8 +46,9 @@ class ChickenManage{
     //打印
     public void printAll(){
         for(Chicken c : chickens){
-            if(null != c)
-                c.printInfo();
+            /*if(null != c)
+                c.printInfo();*/
+            System.out.println(c);
         }
     }
 
@@ -52,9 +60,41 @@ class ChickenManage{
                 cc.setId();
             }
         }*/
-        for (int i = 0; i < count ; i++) {
+        /*for (int i = 0; i < count ; i++) {
             if(chickens[i].getId() == c.getId()){
                 chickens[i] = c;
+            }
+        }*/
+        Chicken chicken = findChickenById(c.getId());
+        if(null != chicken){
+            chicken.setMonth(c.getMonth());
+            chicken.setId(c.getId());
+            chicken.setName(c.getName());
+        }
+    }
+
+    //查找一只鸡
+    public Chicken findChickenById(int id){
+        for(Chicken c : chickens){
+            if(null != c){
+                if(id == c.getId()){//找到了这只鸡
+                    return c;
+                }
+            }
+        }
+        return null;
+    }
+
+    //删除一只鸡
+    public void deleteChickenById(int id){
+        for(int i = 0 ; i < count ; i++){
+            if(id == chickens[i].getId()){
+                //chickens[i] = null;
+                for(int j = i + 1 ; j < count ; j++){
+                    chickens[j - 1] = chickens[j];
+                }
+                //最后一只鸡职位null count 实际的鸡的数量
+                chickens[--count] = null;
             }
         }
     }
@@ -100,5 +140,14 @@ class Chicken{
 
     public void printInfo(){
         System.out.println( "id : " + id  + " , name : " + name + " , month : " + month);
+    }
+
+    @Override
+    public String toString() {
+        return "Chicken{" +
+                "name='" + name + '\'' +
+                ", month=" + month +
+                ", id=" + id +
+                '}';
     }
 }
