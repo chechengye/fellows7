@@ -7,3 +7,15 @@ Example2  - 封装性讲解
 Example3  - 构造方法讲解
 
 Example4  - 值传递与引用传递
+
+Example5  - 对象的一对一关系
+
+Example6  - static关键字
+
+Example7  - main方法分析
+
+Example8  - 代码块
+
+Example9  - 单例设计模式
+
+Example10 - 鸡舍管理案例
