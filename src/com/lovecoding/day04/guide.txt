@@ -3,3 +3,7 @@
 Example1  - 类的讲解
 
 Example2  - 封装性讲解
+
+Example3  - 构造方法讲解
+
+Example4  - 值传递与引用传递

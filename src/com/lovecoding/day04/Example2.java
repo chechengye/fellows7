@@ -10,7 +10,7 @@ public class Example2 {
 
         /*Dog d = null;
         System.out.println(d);*/
-        
+
         //dog.age = 3;
         dog.setColor("黑色");
         //dog.color = "嘿嘿";
