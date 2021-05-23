@@ -10,3 +10,9 @@ Example3  - final关键字讲解
 Example4  - 抽象类应用
 
 Example5  - 接口应用
+
+Example6  - 多态讲解
+
+Example7  - 多态应用实例
+
+Example8  - 模板方法模式（Templete Method）
