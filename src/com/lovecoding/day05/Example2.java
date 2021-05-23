@@ -7,14 +7,34 @@ import java.util.Arrays;
  */
 public class Example2 {
     public static void main(String[] args) {
-        SortCosmeticManager cm = new SortCosmeticManager();
+        ImportCosmeticManager cm = new ImportCosmeticManager();
         cm.add(new Cosmetic("大宝" , "国产" , 22));
         cm.add(new Cosmetic("蒂花之秀" , "进口" , 11));
         cm.add(new Cosmetic("舒肤佳" , "国产" , 33));
+        cm.add(new Cosmetic("曼秀雷敦" , "进口" , 44));
         cm.printAll();
     }
 }
 
+/**
+ * 打印输出所有进口的化妆品
+ */
+class ImportCosmeticManager extends CosmeticManager{
+
+    public void printAll(){
+        for(Cosmetic c : cosmetics){
+            if(null != c){
+                if("进口".equals(c.getType())){
+                    System.out.println(c);
+                }
+            }
+        }
+    }
+
+}
+/**
+ * 根据价格排序输出
+ */
 class SortCosmeticManager extends CosmeticManager{
 
     public void printAll(){
@@ -34,7 +54,7 @@ class SortCosmeticManager extends CosmeticManager{
             }
         }
 
-        //printAll();
+        //super.printAll();
         for(int i = 0 ; i < count ; i ++){
             System.out.println(cosmetics1[i].toString());
         }
