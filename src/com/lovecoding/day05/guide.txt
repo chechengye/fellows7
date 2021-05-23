@@ -16,3 +16,9 @@ Example6  - 多态讲解
 Example7  - 多态应用实例
 
 Example8  - 模板方法模式（Templete Method）
+
+Example9  - Object讲解
+
+Example10 - 简单工厂模式
+
+Example11 - 静态代理模式（Proxy）
