@@ -13,3 +13,5 @@ Example5  - throws与throw应用
 Example6  - 自定义异常
 
 Example7  - debug技术应用
+
+Example8  - 字符串学习
