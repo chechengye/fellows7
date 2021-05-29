@@ -14,7 +14,7 @@ public class Example10 {
         if(null != product){
             product.work();
         }else{
-            System.out.println("工厂还不生成此电子设备..");
+            System.out.println("工厂还不生产此电子设备..");
         }
     }
 }
