@@ -5,3 +5,11 @@ Example1  - 内部类的讲解
 Example2  - 内部类应用链表案例
 
 Example3  - 基本数据类型的包装类
+
+Example4  - 异常讲解
+
+Example5  - throws与throw应用
+
+Example6  - 自定义异常
+
+Example7  - debug技术应用
