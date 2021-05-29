@@ -16,8 +16,14 @@ public class Example2 {
         /*nm.delete(4);
         nm.print();*/
         System.out.println("-------------------");
-        nm.update(0 , 888);
+        //nm.update(0 , 888);
+        //nm.print();
+        System.out.println("-------------------");
+        System.out.println(nm.find(55));
+        System.out.println("--------------------");
+        nm.insert(5 , 77);
         nm.print();
+
     }
 }
 
@@ -66,6 +72,17 @@ class NodeManager{
     }
 
     /**
+     * 查询节点是否存在
+     */
+    public boolean find(int data){
+        if(null == root) return false;
+        else {
+            if(data == root.getData()) return true;
+            else return root.findNode(data);
+        }
+    }
+
+    /**
      * 显示
      */
     public void print(){
@@ -74,6 +91,23 @@ class NodeManager{
             root.printNode();
         }
     }
+
+    /**
+     * 插入一个节点
+     * @param index
+     */
+    public void insert(int index , int data) {
+        if(null != root){
+            if(currentIndex == index){
+                Node newNode = new Node(data);
+                newNode.next = root;
+                root = newNode;
+            }else{
+                root.insertNode(index , data);
+            }
+        }
+    }
+
     class Node{//节点
         Node next;
         int data;
@@ -130,6 +164,36 @@ class NodeManager{
             }
         }
 
+        /**
+         * 递归查找
+         * @param data
+         * @return
+         */
+        public boolean findNode(int data) {
+            if(null == this.next) return false;
+            else{
+                if(data == this.next.data) return true;
+                else return this.next.findNode(data);
+            }
+        }
+
+        /**
+         * 递归插入
+         * @param index
+         * @param data
+         */
+        public void insertNode(int index, int data) {
+            if(null != this.next){
+                if(++currentIndex == index){
+                    Node newNode = new Node(data);
+                    newNode.next = this.next;
+                    this.next = newNode;
+                }else{
+                    this.next.insertNode(index , data);
+                }
+            }
+        }
+
         public int getData() {
             return data;
         }
@@ -137,6 +201,7 @@ class NodeManager{
         public void setData(int data) {
             this.data = data;
         }
+
 
 
     }
