@@ -1,14 +1,12 @@
 package com.lovecoding.day07;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import javax.annotation.Resource;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
  * 程序国际化（I18N）
+ * https://blog.csdn.net/shenenhua/article/details/79150053语言代码地址
  */
 public class Example2 {
 
