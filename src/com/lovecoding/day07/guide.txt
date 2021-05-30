@@ -4,3 +4,11 @@
 Example1  - 字符串拼接
 
 Example2  - 程序国际化（I18N）
+
+Example3  - Math数学函数应用 Random类应用
+
+Example4  - 日期应用
+
+Example5  - 比较器对象应用
+
+Example6  - 对象的clone技术
