@@ -15,3 +15,5 @@ Example6  - 自定义异常
 Example7  - debug技术应用
 
 Example8  - 字符串学习
+
+Example9  - 字符串API应用

@@ -113,6 +113,5 @@ public class Example8 {
         String str7 = " djshjds dhsdjhs ";
         System.out.println(str7.trim());//登录，输入用户名/密码 zhangsan
 
-    
     }
 }
