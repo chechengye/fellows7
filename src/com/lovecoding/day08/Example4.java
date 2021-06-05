@@ -8,13 +8,17 @@ import java.util.*;
  *
  * 键值对 key,value
  * 键不能重复，值可以重复
- *
+ * 键与值都是支持任意类型的
  */
 public class Example4 {
 
     public static void main(String[] args) {
         //map();
-        hashMap();
+        //hashMap();
+        //hashTable();
+        //linkedHashMap();
+        //treeMap();
+        newMap();
     }
 
     /**
@@ -63,7 +67,7 @@ public class Example4 {
      * 3、当链表长度达到8的时候。引入了红黑树 - 左右子树长度一致的。
      * 4、线程不安全的，建议单线程使用
      * 5、当扩容之后，重排。（不能保证HashSet/HashMap里面的顺序恒久不变）
-     *
+     * 6、当数据大小到达 原数组长度*加载因子的时候，扩容到原来的2倍+1
      */
     public static void hashMap(){
         Map<Integer , String> map = new HashMap<>();
@@ -77,7 +81,75 @@ public class Example4 {
 
         System.out.println(18354334 & 15);// <=15的值 0~15
 
-
     }
 
+    /**
+     * hashTable
+     * 数据结构：哈希表
+     * 1、初始化容量为11 ， 默认加载因子为0.75f
+     * 2、可以通过构造器控制加载因子和初始容量
+     * 3、多线程下建议使用，线程安全的
+     */
+    public static void hashTable(){
+        Map<String,String> table= new Hashtable<>(20 , 0.6f);
+        table.put("aaa" , "123");
+        table.put("bbb" , "345");
+        table.put("ccc" , "567");
+        table.put("ddd",null);
+
+        table.forEach((k,v)-> System.out.println(k+"->"+v));
+    }
+
+    public static void linkedHashMap(){
+        Map<String,String> linkedHashMap= new LinkedHashMap<>(20 , 0.6f);
+        linkedHashMap.put("aaa" , "123");
+        linkedHashMap.put("bbb" , "345");
+        linkedHashMap.put("ccc" , "567");
+        linkedHashMap.put("ddd",null);
+
+        linkedHashMap.forEach((k,v)-> System.out.println(k+"->"+v));
+    }
+
+    /**
+     * 数据结构：
+     * 基于红黑树
+     * 支持安装自然顺序或比较器对象进行排序操作
+     */
+    public static void treeMap(){
+        Map<Person , String> map = new TreeMap<>(new PersonComparator());
+        map.put(new Person(22,"lisi") , "a123");
+        map.put(new Person(33,"wangwu") , "a456");
+        map.put(new Person(11,"zhaoliu") , "a789");
+        map.forEach((k ,v)-> System.out.println(k+"->"+v));
+    }
+
+
+    /**
+     * JDK1.8之后引入的新方法
+     */
+    public static void newMap(){
+        Map<Integer , String> map = new HashMap<>();
+        map.put(1,"tom");//添加元素方法
+        map.put(2,"jack");
+        map.put(50,"lucy");
+
+        //map.remove(2);
+        System.out.println("----------------");
+        System.out.println(map.getOrDefault(66, "newVal"));
+
+        System.out.println("--------------------");
+        map.putIfAbsent(4 , "array");
+        map.remove(2,"jack");//删除时，校验键与值同时成立
+
+        map.replace(50,"newVal-replace");
+
+        //map.compute(1,(k,v)->k + v);
+        //map.computeIfPresent(1 , (k,v)->k + v);
+        //会将不存在的键 做为新的key 。将值与key进行拼接成为新的值
+        map.computeIfAbsent(66 , (oldVal)->oldVal + "test");
+
+        map.merge(888 , "test" , (oldVal , newVal) ->oldVal + newVal);
+
+        map.forEach((k ,v)-> System.out.println(k+"->"+v));
+    }
 }
