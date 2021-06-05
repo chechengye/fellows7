@@ -71,8 +71,9 @@ public class Example2 {
      * System.out::println 应用 Consumer函数式接口的应用、只有一个无返回值的一个参数的抽象方法。
      *
      * :: 应用 (不太推荐使用 1、可读性差 2、应用限制太多)
-     * 应用与对象 引用方法
-     * 应用与类 引用静态方法 Integer::valueOf
+     * 引用与对象 引用方法
+     * 引用与类 引用静态方法 Integer::valueOf
+     * 引用构造方法 Arrays::new
      */
     public static void foreach(){
         List<String> list = new ArrayList<>();

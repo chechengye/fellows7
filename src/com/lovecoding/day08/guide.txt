@@ -5,3 +5,7 @@
 Example1  - Set集合讲解
 
 Example2  - Iterator应用
+
+Example3  - 函数式接口应用
+
+Example4  - Map集合讲解
