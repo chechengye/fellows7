@@ -13,6 +13,8 @@ public class Example8 {
 
         t1.start();
         t2.start();
+
+        System.out.println(Thread.activeCount());//GC 线程就会开启。Java默认就是多线程的
     }
 }
 
