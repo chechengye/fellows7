@@ -11,4 +11,10 @@ Example4  - 一对多关系
 
 Example5  - 多对多关系
 
-Iterator - 迭代器模式应用
+Iterator  - 迭代器模式应用
+
+Example6  - 线程的应用
+
+Example7  - 守护线程应用
+
+Example8  - 售票案例 火车站
