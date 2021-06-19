@@ -8,3 +8,5 @@ Example2  - 生产者与消费者案例
 Example3  - 线程池应用
 
 Example4  - 反射讲解
+
+Example5  - 动态代理

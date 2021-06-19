@@ -1,7 +1,6 @@
 package com.lovecoding.day10;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.*;
 
 /**
  * 反射讲解
@@ -54,6 +53,73 @@ public class Example4 {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+
+        System.out.println("--------------获取包信息----------------");
+        getPackage();
+
+        System.out.println("-------------获取对象中方法信息------------");
+        getMethod();
+
+        System.out.println("------------------");
+        getFields();
+    }
+
+    /**
+     * 使用Class对象获取对象所在的包信息
+     */
+    public static void getPackage(){
+        Class aClass = Car.class;
+        Package aPackage = aClass.getPackage();
+        System.out.println(aPackage.getName());
+    }
+
+    /**
+     * 使用Class对象获取对象中的方法
+     */
+    public static void getMethod(){
+        Class aClass = Car.class;
+        Car car = new Car();
+        Method[] methods = aClass.getMethods();//只会获取到由public修饰的本类中的方法和父类中的所有方法
+        for(Method method : methods){
+            System.out.println(method);
+        }
+        System.out.println("---------");
+        Method[] declaredMethods = aClass.getDeclaredMethods();
+        for(Method m : declaredMethods){
+            if(m.getName().equals("toString")){//查找调用的方法
+                try {
+                    System.out.println("--------------------");
+                    System.out.println(m.invoke(car));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(m.getName().equals("method")){//查找到了私有方法
+                try {
+                    m.setAccessible(true);//默认是false
+                    System.out.println("方法的修饰符为：" + Modifier.toString(m.getModifiers()));
+                    m.invoke(car , "被调用..");//java.lang.IllegalAccessException : with modifiers "private" 需要配合setAccessible使用
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    /**
+     * 反射操作获取属性
+     */
+    public static void getFields(){
+        Class aClass = Car.class;
+        Field[] fields = aClass.getFields();
+
+        Field[] declaredFields = aClass.getDeclaredFields();
+        for(Field field : declaredFields){
+            System.out.println(Modifier.toString(field.getModifiers()) + " "+ field.getType().getTypeName() + " " + field.getName());
+        }
     }
 }
 
@@ -101,6 +167,14 @@ class Car{
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    private void method(String info){
+        System.out.println("私有方法..." + info);
+    }
+
+    protected void method1(){
+        System.out.println("受保护的方法...");
     }
 
     @Override
