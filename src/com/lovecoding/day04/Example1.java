@@ -23,6 +23,7 @@ package com.lovecoding.day04;
  */
 public class Example1 {
 
+
     int age = 10;
     String name = "张三";
 
